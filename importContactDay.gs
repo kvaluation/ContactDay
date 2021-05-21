@@ -1,13 +1,12 @@
 function importContactDay() {
   // ContactDay.txtのfolder
-  // https://drive.google.com/drive/folders/1mHlqfvVhV4zlkksRGwSDsh_tMMVsjxsw?usp=sharing
 
-  const toAdress = "kenji.suzuki@kval.jp"; //送り先アドレス
+  const toAdress = "送り先メールアドレス"; //送り先アドレス
   const subject = "ContactDay";//メールの題目
-  const name = "Google Apps Script by kval";//送り主の名前
+  const name = "Google Apps Script by 送り主";//送り主の名前
   const today = new Date();
 
-  const folderID = '1mHlqfvVhV4zlkksRGwSDsh_tMMVsjxsw' //ContactDay.txtのfolderID
+  const folderID = 'ContactDay.txtが格納されたGoogleDriveのID' //ContactDay.txtのfolderID
   const targetFolder = DriveApp.getFolderById(folderID); //ContactDay.txtが保存されるフォルダ
   const ContactDayFiles = targetFolder.searchFiles('title contains "cDay" and title contains "\.csv"');
 
@@ -54,9 +53,8 @@ function importContactDay() {
 
 //■■■　選定したファイルをスプレッドシートに上書き　■■■
   // 読み書きの対象のSpreadSheetを定義
-  // https://docs.google.com/spreadsheets/d/1jxO4vJMlv20JhOCqOOhCWod4hEUzNJxrYtHaA6t9DvI/edit?usp=sharing
 
-  const ssID = '1jxO4vJMlv20JhOCqOOhCWod4hEUzNJxrYtHaA6t9DvI'
+  const ssID = 'ファイルをインポートする先のスプレッドシートID'
   const ssName = 'ContactDaySheet';
 
   const ss = SpreadsheetApp.openById(ssID);
@@ -108,7 +106,7 @@ function importContactDay() {
 
   sh.getRange(lastRow+1,1,todayCsv.length,todayCsv[0].length).setValues(todayCsv);
 
-// 追記した行にセルの書式のみコピー
+// 追記した行にセルの書式のみコピー（Google DataStudio用）
 
 const range = sh.getRange(lastRow, 1, 1, todayCsv[0].length);
 range.copyFormatToRange(sh, 1, todayCsv[0].length, lastRow+1, lastRow+todayCsv.length);
@@ -130,7 +128,7 @@ range.copyFormatToRange(sh, 1, todayCsv[0].length, lastRow+1, lastRow+todayCsv.l
     const body =
     "ContactDayログ\n" +
     logData + "\n" +
-    "https://docs.google.com/spreadsheets/d/1jxO4vJMlv20JhOCqOOhCWod4hEUzNJxrYtHaA6t9DvI/edit?usp=sharing";
+    "https://docs.google.com/spreadsheets/d/”ここにシートID”/edit?usp=sharing";
 
     MailApp.sendEmail({to:toAdress, subject:subject, name:name, body:body});
 
