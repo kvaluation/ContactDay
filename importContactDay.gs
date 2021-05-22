@@ -1,11 +1,15 @@
 function importContactDay() {
-  // ContactDay.txtのfolder
+  // zipDownload.sh, contactDay.shに続いて、2:00 - 3:00に自動実行
+  // 実行結果はスプレッドシートに入り、データポータルで自動更新
+  // https://datastudio.google.com/reporting/069598a2-3f01-4b51-b023-cdb478992182
 
+  // 実行結果に応じた内容をメールする
   const toAdress = "送り先メールアドレス"; //送り先アドレス
   const subject = "ContactDay";//メールの題目
   const name = "Google Apps Script by 送り主";//送り主の名前
   const today = new Date();
 
+  // ContactDay.txtのfolderをfolderIDで特定
   const folderID = 'ContactDay.txtが格納されたGoogleDriveのID' //ContactDay.txtのfolderID
   const targetFolder = DriveApp.getFolderById(folderID); //ContactDay.txtが保存されるフォルダ
   const ContactDayFiles = targetFolder.searchFiles('title contains "cDay" and title contains "\.csv"');
