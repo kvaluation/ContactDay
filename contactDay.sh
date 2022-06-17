@@ -62,7 +62,7 @@ do
 	      >> /Users/home/Dropbox/EN/ContactDay/cDay`date "+%Y%m%d"`.csv
 
          echo ${TEKs[${index}]} > /Users/home/Dropbox/EN/TEKfiles/${ZIPNUM}.txt
-	 echo ${TEKs[${index}]} > /Volumes/GoogleDrive/共有ドライブ/KvalPublic/ENonGoogleDrive/TEKfiles/${ZIPNUM}.txt
+	# echo ${TEKs[${index}]} > /Volumes/GoogleDrive/共有ドライブ/KvalPublic/ENonGoogleDrive/TEKfiles/${ZIPNUM}.txt
 	 
        echo "processing $index zipNumber: ${ZIPNUM[${index}]}"
        echo "processing $index timestamp: ${TIMESTAMP[${index}]}"
