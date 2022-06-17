@@ -40,7 +40,7 @@ unzip -o -p zipfiles/4000.zip "export.bin" | shasum -a 256
 このHASH値は、iOSの「チェックの詳細」画面などに表示されるHASH値で、zipファイルと一対一に対応しています。ですので、HASH値がわかると、zip番号を特定できます。
 AndroidのHASHとは異なります。
 
-## 接触日の推定について
+## 接触日の推定について（COCOA　Ver. 1.xまで）
 zipファイルには複数のTEKが格納されており、zipファイル１ファイルに含まれている複数のTEKのそれぞれのrolling_start_interval_numberは同じ値です。  
 rolling_start_interval_numberは、接触確認が機能しているスマホ間でBLTで送受信されるキー（接触符号, RPI）の開始日時です。有効期間は24時間です。  
 開始日時なので、スマホがすれ違った日（接触日）です。  
@@ -51,12 +51,16 @@ rolling_start_interval_numberは、接触確認が機能しているスマホ間
   
 HASH値からzip番号を特定い、zipに含まれるTEKのrolling_start_interval_numberは同じ値なので、HASH値から接触日を推定できています。
 
+## 接触日の推定について（COCOA　Ver. 2.x以後）
+EN2 (ExposureWindow)の採用により、提供されたキーの数（MatchCount）がzip（HASH）ごとに示されなくなったため、HASHから接触日を推定することができなくなりました。
+
 ## ファイルの共有
 上記の処理で得られているファイルも公開します。次のフォルダーからダウンロードできます。
 
 広範な接触（キーの一致）で公費PCRを実施いただいている保健所様、病院様・クリニック様には、ご要望に応じた使いやすいデータとしてご提供できますので、ご相談ください。（スプレッドシートの共有や、Excelファイルの自動的なメール添付送信など）。　感染拡大の抑止へのご協力、ありがとうございます。
 
 [zip files](https://drive.google.com/drive/folders/1SgJ2JU79rZ4MyMrV9CoETEzebUxeCvWd?usp=sharing)
+zipファイルについては、1日　5回配信となり処理負荷があるため、自動的な公開を停止しました。zipファイルへアクセスする必要のある方がいらっしゃいましたらご相談ください。
 
 [list.txt](https://drive.google.com/drive/folders/1-6Ly6mU3JyCgppU7MJV6PFaT044a9okW?usp=sharing)
 
