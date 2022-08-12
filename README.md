@@ -39,7 +39,7 @@ zip番号が4000であれば、zipfilesに格納されているとして、次�
 ```
 unzip -o -p zipfiles/4000.zip "export.bin" | shasum -a 256
 ```
-このHASH値は、iOSの「チェックの詳細」画面などに表示されるHASH値で、zipファイルと一対一に対応しています。ですので、HASH値がわかると、zip番号を特定できます。
+このHASH値は、iOSの「チェックの詳細」画面などに表示されるHASH値で、zipファイルと一対一に対応しています。ですので、COCOA 1xまでは、HASH値がわかると、zip番号を特定できます。
 AndroidのHASHとは異なります。
 
 ## 接触日の推定について（COCOA　Ver. 1.xまで）
@@ -56,14 +56,10 @@ HASH値からzip番号を特定い、zipに含まれるTEKのrolling_start_inter
 ## 接触日の推定について（COCOA　Ver. 2.x以後）
 EN2 (ExposureWindow)の採用により、提供されたキーの数（MatchCount）がzip（HASH）ごとに示されなくなったため、HASHから接触日を推定することができなくなりました。
 
+なお、EN2では、接触日は9時スタートと解しています。
+
 ## ファイルの共有
-上記の処理で得られているファイルも公開します。次のフォルダーからダウンロードできます。
+上記の処理で得られているファイルも公開しておりましたが、TEK配信が1日に数回となり、情報処理負担が増加したため、公開を見合わせています。
 
-広範な接触（キーの一致）で公費PCRを実施いただいている保健所様、病院様・クリニック様には、ご要望に応じた使いやすいデータとしてご提供できますので、ご相談ください。（スプレッドシートの共有や、Excelファイルの自動的なメール添付送信など）。　感染拡大の抑止へのご協力、ありがとうございます。
+しかし、広範な接触（キーの一致）で公費PCRを実施いただいている保健所様、病院様・クリニック様には、ご要望に応じた使いやすいデータとしてご提供できますので、ご相談ください。（スプレッドシートの共有や、Excelファイルの自動的なメール添付送信など）。　感染拡大の抑止へのご協力、ありがとうございます。
 
-[zip files](https://drive.google.com/drive/folders/1SgJ2JU79rZ4MyMrV9CoETEzebUxeCvWd?usp=sharing)
-zipファイルについては、1日　5回配信となり処理負荷があるため、自動的な公開を停止しました。zipファイルへアクセスする必要のある方がいらっしゃいましたらご相談ください。
-
-[list.txt](https://drive.google.com/drive/folders/1-6Ly6mU3JyCgppU7MJV6PFaT044a9okW?usp=sharing)
-
-[contactDay.csv](https://drive.google.com/drive/folders/1mHlqfvVhV4zlkksRGwSDsh_tMMVsjxsw?usp=sharing)
